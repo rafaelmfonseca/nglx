@@ -4,8 +4,11 @@
     "license": "MIT",
     "scripts": {
         "build": "nx build store",
-        "test:all": "nx run-many --target=test -all",
+        "test:all": "nx run-many --target=test --all",
         "build:all": "nx run-many --target=build --all",
+        "format": "nx format:write",
+        "graph": "nx graph",
+        "prettier:fix": "prettier --ignore-path ./.prettierignore --write",
         "postinstall": "ngcc --properties es2015 browser module main",
         "prepare": "husky install"
     },
