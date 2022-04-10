@@ -1,0 +1,39 @@
+{
+    "projectType": "library",
+    "root": "packages/store",
+    "sourceRoot": "packages/store/src",
+    "prefix": "nglx",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/angular:ng-packagr-lite",
+            "outputs": ["dist/packages/store"],
+            "options": {
+                "project": "packages/store/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "packages/store/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "packages/store/tsconfig.lib.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/packages/store"],
+            "options": {
+                "jestConfig": "packages/store/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["packages/store/src/**/*.ts", "packages/store/src/**/*.html"]
+            }
+        }
+    },
+    "tags": []
+}

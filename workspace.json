@@ -1,0 +1,6 @@
+{
+    "version": 2,
+    "projects": {
+        "store": "packages/store"
+    }
+}
